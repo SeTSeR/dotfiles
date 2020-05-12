@@ -11,6 +11,10 @@
     shell = pkgs.zsh;
   };
 
+  environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && i3
+  '';
+
   home-manager.useUserPackages = true;
   home-manager.users.smakarov = {
     home.sessionVariables = {

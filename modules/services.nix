@@ -32,15 +32,15 @@
   services.blueman.enable = true;
 
   # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    layout = "us,ru(winkeys)";
-    xkbOptions = "grp:caps_toggle";
-    libinput.enable = true;
-    displayManager.lightdm.enable = true;
-    videoDrivers = lib.optionals config.deviceSpecific.isWorkMachine [ "nvidia" ];
-    windowManager.i3.enable = true;
-  };
+  # services.xserver = {
+  #   enable = true;
+  #   layout = "us,ru(winkeys)";
+  #   xkbOptions = "grp:caps_toggle";
+  #   libinput.enable = true;
+  #   displayManager.lightdm.enable = false;
+  #   videoDrivers = lib.optionals config.deviceSpecific.isWorkMachine [ "nvidia" ];
+  #   windowManager.i3.enable = true;
+  # };
 
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
