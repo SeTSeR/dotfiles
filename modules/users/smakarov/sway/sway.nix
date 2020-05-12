@@ -44,7 +44,6 @@ in {
       };
       startup = [
         { command = "${config.users.users.smakarov.home}/.screenlayouts/layout.sh"; }
-        { command = "${pkgs.nitrogen}/bin/nitrogen --restore"; }
       ];
       keybindings = let
         script = name: content: "exec ${pkgs.writeScript name content}";
@@ -113,6 +112,7 @@ in {
       workspace "3: " output HDMI-0
       workspace "4: " output primary
     '' else "" + ''
+      output * bg ~/Обои/The_Anthropocene_Extinction_Wallpaper.jpg fill
       default_border pixel 1
       hide_edge_borders --i3 smart
     '';
