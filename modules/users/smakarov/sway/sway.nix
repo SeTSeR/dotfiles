@@ -46,7 +46,9 @@ in {
         { command = "${config.users.users.smakarov.home}/.screenlayouts/layout.sh"; }
         { command = "${pkgs.nitrogen}/bin/nitrogen --restore"; }
       ];
-      keybindings = ({
+      keybindings = let
+        script = name: content: "exec ${pkgs.writeScript name content}";
+      in ({
         "${modifier}+Shift+q" = "kill";
         "${modifier}+Return" = "exec --no-startup-id ${term}";
         "${modifier}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
@@ -94,8 +96,8 @@ in {
         "exec ${pkgs.acpilight}/bin/xbacklight -ctrl asus::kbd_backlight -inc 20";
         "XF86KbdBrightnessDown" =
         "exec ${pkgs.acpilight}/bin/xbacklight -ctrl asus::kbd_backlight -dec 20";
-        "--release Print" = ''
-          exec --no-startup-id "import png:- | xclip -selection c -t image/png"'';
+        "--release Print" = script "screenshot-area" ''
+            ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" Pictures/$(date +'%Y-%m-%d+%H:%M:%S').png'';
       } // builtins.listToAttrs (builtins.genList (x: {
         name = "${modifier}+${toString (x + 6)}";
         value = "workspace ${toString (x + 6)}";
