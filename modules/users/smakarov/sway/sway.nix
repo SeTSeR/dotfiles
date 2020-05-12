@@ -34,8 +34,8 @@ in {
       focus.followMouse = false;
       modifier = "Mod4";
       floating.modifier = "${modifier}";
+      floating.titlebar = false;
       window = {
-        border = 1;
         titlebar = false;
         commands = [{
           command = "move to workspace 4: ";
@@ -110,6 +110,9 @@ in {
       workspace "2: " output primary
       workspace "3: " output HDMI-0
       workspace "4: " output primary
-    '' else "";
+    '' else "" + ''
+      default_border pixel 1
+      hide_edge_borders --i3 smart
+    '';
   };
 }
