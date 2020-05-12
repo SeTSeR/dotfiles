@@ -16,5 +16,7 @@
     home.sessionVariables = {
       EDITOR = "${pkgs.emacsGit}/bin/emacsclient -c";
     };
+    wayland.windowManager.sway.enable = true;
   };
+
 }
