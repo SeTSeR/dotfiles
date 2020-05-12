@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    ./i3.nix
+    ./sway.nix
     ./i3status.nix
     ./layout.nix
   ];

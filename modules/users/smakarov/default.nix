@@ -5,7 +5,7 @@
     ./firefox.nix
     ./git.nix
     ./gnupg.nix
-    ./i3
+    ./sway
     ./mail.nix
     ./openvpn.nix
     ./packages.nix

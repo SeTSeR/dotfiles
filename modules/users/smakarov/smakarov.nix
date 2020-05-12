@@ -12,15 +12,25 @@
   };
 
   environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && i3
+    [[ "$(tty)" == /dev/tty1 ]] && sway
   '';
 
   home-manager.useUserPackages = true;
   home-manager.users.smakarov = {
     home.sessionVariables = {
       EDITOR = "${pkgs.emacsGit}/bin/emacsclient -c";
+      VISUAL = "${pkgs.emacsGit}/bin/emacsclient -c";
+      QT_QPA_PLATFORM = "wayland";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      NIX_AUTO_RUN = "1";
     };
     wayland.windowManager.sway.enable = true;
+  };
+
+  environment.sessionVariables = {
+    XDG_SESSION_TYPE = "wayland";
+    XKB_DEFAULT_LAYOUT = "us,ru(winkeys)";
+    XKB_DEFAULT_OPTIONS = "grp:caps_toggle";
   };
 
 }

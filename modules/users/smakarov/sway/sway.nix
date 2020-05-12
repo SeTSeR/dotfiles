@@ -2,7 +2,7 @@
 let
   term = "${pkgs.alacritty}/bin/alacritty";
 in {
-  home-manager.users.smakarov.xsession.windowManager.i3 = {
+  home-manager.users.smakarov.wayland.windowManager.sway = {
     enable = true;
     config = rec {
       assigns = {
@@ -66,7 +66,7 @@ in {
         "${modifier}+Shift+Right" = "move right";
         "${modifier}+h" = "split h";
         "${modifier}+v" = "split v";
-        "${modifier}+Shift+e" = "exec ${pkgs.i3}/bin/i3-msg exit";
+        "${modifier}+Shift+e" = "exit";
         "${modifier}+1" = "workspace 1: ";
         "${modifier}+2" = "workspace 2: ";
         "${modifier}+3" = "workspace 3: ";
