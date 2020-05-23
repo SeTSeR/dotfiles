@@ -23,14 +23,16 @@
       QT_QPA_PLATFORM = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       NIX_AUTO_RUN = "1";
-      XDG_SESSION_TYPE = "wayland";
-      XKB_DEFAULT_LAYOUT = "us,ru(winkeys)";
-      XKB_DEFAULT_OPTIONS = "grp:caps_toggle";
     };
     home.keyboard = {
       layout = "us,ru(winkeys)";
       options = [ "grp:caps_toggle" ];
     };
     wayland.windowManager.sway.enable = true;
+  };
+  environment.sessionVariables = {
+    XDG_SESSION_TYPE = "wayland";
+    XKB_DEFAULT_LAYOUT = "us,ru(winkeys)";
+    XKB_DEFAULT_OPTIONS = "grp:caps_toggle";
   };
 }
