@@ -50,7 +50,7 @@ in {
       in ({
         "${modifier}+Shift+q" = "kill";
         "${modifier}+Return" = "exec --no-startup-id ${term}";
-        "${modifier}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
+        "${modifier}+d" = "exec ${pkgs.bemenu}/bin/bemenu-run";
         "${modifier}+f" = "fullscreen toggle";
         "${modifier}+Shift+l" = "layout toggle";
         "${modifier}+Left" = "focus child; focus left";
@@ -78,7 +78,7 @@ in {
         "${modifier}+Shift+3" = "move container to workspace 3: ";
         "${modifier}+Shift+4" = "move container to workspace 4: ";
         "${modifier}+Shift+5" = "move container to workspace 5: ";
-        "${modifier}+Ctrl+l" = "exec ${pkgs.i3lock}/bin/i3lock";
+        "${modifier}+Ctrl+l" = "exec ${pkgs.swaylock}/bin/swaylock";
         "${modifier}+Ctrl+p" = "exec ${pkgs.emacsGit}/bin/emacsclient -nc";
         "${modifier}+Ctrl+f" = "exec ${pkgs.firefox}/bin/firefox";
         "XF86AudioRaiseVolume" =
