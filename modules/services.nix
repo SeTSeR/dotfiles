@@ -14,6 +14,7 @@
     item = "core";
     value = 1024;
   }];
+  security.pam.services.swaylock = {};
 
   sound.enable = true;
 
