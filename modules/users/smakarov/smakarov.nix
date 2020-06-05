@@ -18,8 +18,8 @@
   home-manager.useUserPackages = true;
   home-manager.users.smakarov = {
     home.sessionVariables = {
-      EDITOR = "${pkgs.emacsGit}/bin/emacsclient -c";
-      VISUAL = "${pkgs.emacsGit}/bin/emacsclient -c";
+      EDITOR = "${config.emacsPackage}/bin/emacsclient -c";
+      VISUAL = "${config.emacsPackage}/bin/emacsclient -c";
       QT_QPA_PLATFORM = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       NIX_AUTO_RUN = "1";
