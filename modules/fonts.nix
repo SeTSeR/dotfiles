@@ -8,6 +8,8 @@
       };
     };
     fonts = with pkgs; [
+      comic-relief
+      cm_unicode
       dejavu_fonts
       fira-code
       fira-code-symbols
